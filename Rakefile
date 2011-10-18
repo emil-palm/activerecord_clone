@@ -17,10 +17,11 @@ Jeweler::Tasks.new do |gem|
   gem.name = "activerecord_clone"
   gem.homepage = "http://github.com/mrevilme/activerecord_clone"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{configurable clone of AR objects}
+  gem.description = %Q{Provides the method of 'clone_ar' that can clone your current object.
+    Accepts options on both class level and method call level.}
   gem.email = "emil.palm@qubator.com"
-  gem.authors = ["science"]
+  gem.authors = ["science", "buffpojken"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new

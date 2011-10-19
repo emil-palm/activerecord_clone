@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "activerecord_clone"
-  s.version = "0.0.1"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["science", "buffpojken"]
-  s.date = "2011-10-18"
+  s.date = "2011-10-19"
   s.description = "Provides the method of 'clone_ar' that can clone your current object.\n    Accepts options on both class level and method call level."
   s.email = "emil.palm@qubator.com"
   s.extra_rdoc_files = [
@@ -20,13 +20,19 @@ Gem::Specification.new do |s|
     ".document",
     ".rspec",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "activerecord_clone.gemspec",
+    "lib/active_record/clone.rb",
     "lib/activerecord_clone.rb",
     "spec/activerecord_clone_spec.rb",
-    "spec/spec_helper.rb"
+    "spec/spec_helper.rb",
+    "spec/support/data.rb",
+    "spec/support/models.rb",
+    "spec/support/schema.rb"
   ]
   s.homepage = "http://github.com/mrevilme/activerecord_clone"
   s.licenses = ["MIT"]

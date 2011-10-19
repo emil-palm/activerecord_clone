@@ -27,7 +27,7 @@ module ActiveRecord
       @options = {}
       
       def can_clone(options={})
-        @options = default_options.merge(options)
+        @options = default_options.keep_merge(options)
       end
             
       private
@@ -50,12 +50,14 @@ module ActiveRecord
     module InstanceMethods
       
       def clone_ar(options={})
-        options = (self.instance_variable_get(:@options) ? self.instance_variable_get(:@options) : self.class.send(:default_options)).merge(options)
+        options = (self.instance_variable_get(:@options) ? self.instance_variable_get(:@options) : self.class.send(:default_options)).keep_merge(options)
+        puts options
         attrs = []
         if options[:only] and options[:only].is_a? Array
           attrs = self.attribute_names.reject {|item| options[:only].include? item}
         else
           excluded = options[:excluded] + (options[:skip_relations] ? self.class.send(:foreing_keys) : [])
+
           attrs = self.attribute_names.reject { |item| excluded.include? item}
         end
         

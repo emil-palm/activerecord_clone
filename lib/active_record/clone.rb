@@ -1,5 +1,6 @@
 require 'active_support'
 require 'active_record'
+require 'pp'
 
 module ActiveRecord
   # == Active Model Clone
@@ -56,8 +57,7 @@ module ActiveRecord
           attrs = self.attribute_names.reject {|item| options[:only].include? item}
         else
           excluded = options[:excluded] + (options[:skip_relations] ? self.class.send(:foreing_keys) : [])
-
-          attrs = self.attribute_names.reject { |item| excluded.include? item}
+          attrs = self.attribute_names.reject { |item| excluded.include? item.to_sym }
         end
         
         newObj = self.class.new

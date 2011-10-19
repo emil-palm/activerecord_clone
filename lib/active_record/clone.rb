@@ -51,7 +51,6 @@ module ActiveRecord
       
       def clone_ar(options={})
         options = (self.instance_variable_get(:@options) ? self.instance_variable_get(:@options) : self.class.send(:default_options)).keep_merge(options)
-        puts options
         attrs = []
         if options[:only] and options[:only].is_a? Array
           attrs = self.attribute_names.reject {|item| options[:only].include? item}

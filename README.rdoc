@@ -1,6 +1,20 @@
 = activerecord_clone
 
-Description goes here.
+Handles a simple task of cloning all attributes of a AR object
+Default behaviour is to not clone the foreign_keys.
+
+Possible options is:
+:only => [] # only clone these attributes
+:exclude => [] # Exlude these attributes, default is :id
+:skip_relations => true|false #default is true
+
+Can be configured either on a model layer using
+
+class MyModel < ActiveRecord::Base
+can_clone
+end
+
+Or can be configured upon the call to clone_ar.
 
 == Contributing to activerecord_clone
  
@@ -11,9 +25,3 @@ Description goes here.
 * Commit and push until you are happy with your contribution
 * Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
-
-== Copyright
-
-Copyright (c) 2011 science. See LICENSE.txt for
-further details.
-

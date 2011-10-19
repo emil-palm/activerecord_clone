@@ -1,0 +1,1 @@
+Post.create(:text => "Post!")
